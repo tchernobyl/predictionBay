@@ -1,0 +1,103 @@
+[
+  {
+    "id": "71718f2a1c65d2a4",
+    "type": "tab",
+    "label": "Flow 1",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "55a4b235a969e7ab",
+    "type": "inject",
+    "z": "71718f2a1c65d2a4",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 120,
+    "wires": [
+      [
+        "812340725a8f5f0b"
+      ]
+    ]
+  },
+  {
+    "id": "812340725a8f5f0b",
+    "type": "http request",
+    "z": "71718f2a1c65d2a4",
+    "name": "",
+    "method": "GET",
+    "ret": "obj",
+    "paytoqs": "ignore",
+    "url": "https://jsonplaceholder.typicode.com/todos/1",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "insecureHTTPParser": false,
+    "authType": "",
+    "senderr": false,
+    "headers": [],
+    "x": 270,
+    "y": 200,
+    "wires": [
+      [
+        "1fdbfc06805bf907",
+        "4afea380e6cae584"
+      ]
+    ]
+  },
+  {
+    "id": "1fdbfc06805bf907",
+    "type": "debug",
+    "z": "71718f2a1c65d2a4",
+    "name": "test11",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 450,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "4afea380e6cae584",
+    "type": "function",
+    "z": "71718f2a1c65d2a4",
+    "name": "function 2",
+    "func": "msg.payload.ameur='test';\nconsole.log(54545);\nvar test =15;\nif(test ==16){\n    test = 99;\n}\nmsg.payload.test = test;\nreturn msg",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 680,
+    "y": 260,
+    "wires": [
+      [
+        "1fdbfc06805bf907"
+      ]
+    ],
+    "outputLabels": [
+      "15"
+    ]
+  }
+]
