@@ -1,7 +1,7 @@
-<!--Voici un exemple simple en JavaScript d'un arbre de décision qui prédit si un-->
-<!--fruit donné est une pomme ou une orange en fonction de son poids et de sa texture :-->
+// Voici un exemple simple en JavaScript d'un arbre de décision qui prédit si un
+// fruit donné est une pomme ou une orange en fonction de son poids et de sa texture :
+// Ensemble de données d'entraînement
 
-    // Ensemble de données d'entraînement
     var trainingData = [
         { weight: 140, texture: 'lisse', type: 'pomme' },
         { weight: 130, texture: 'lisse', type: 'pomme' },
