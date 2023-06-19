@@ -45,6 +45,30 @@ console.log(json);
 
 
 
+# NORMALISATION DES DONNEES 
+
+function normalizeData(data) {
+  const normalizedData = [];
+  const numColumns = data[0].length;
+
+  for (let i = 0; i < numColumns; i++) {
+    const column = data.map(row => row[i]);
+    const min = Math.min(...column);
+    const max = Math.max(...column);
+
+    const normalizedColumn = column.map(value => (value - min) / (max - min));
+    normalizedData.push(normalizedColumn);
+  }
+
+  return transpose(normalizedData);
+}
+
+
+
+
+
+
+
 # diviser les données en test et train 
 const trainRatio = 0.7; // Ratio pour l'ensemble d'entraînement
 const trainSize = Math.round(data.length * trainRatio);
